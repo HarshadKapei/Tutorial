@@ -14,7 +14,7 @@
     "dependencies": {
         "cors": "^2.8.5",
         "mongoose-validators": "^0.1.0",
-        "wohlig-framework-core": "^0.0.6"
+        "wohlig-framework-core": "^0.0.8"
     },
     "devDependencies": {
         "@babel/core": "^7.1.2",
@@ -75,7 +75,8 @@
             "Student": true,
             "Genre": true,
             "GenreModel": true,
-            "require": true
+            "require": true,
+            "favourites": true
         }
     }
 }

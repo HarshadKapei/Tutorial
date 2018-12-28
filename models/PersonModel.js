@@ -1,29 +1,31 @@
+import Person from "../mongooseModel/Person"
+
 export default {
-    search(callback) {
+    search: function(callback) {
         Person.find().exec(callback)
     },
-    getOne(id, callback) {
+    getOne:function(id, callback) {
         Person.findOne({
             _id: id
         }).exec(callback)
     },
-    create(data, callback) {
+    create:function(data, callback) {
         var person = Person(data)
         person.save(callback)
     },
-    edit(id, name, image, dob, callback) {
+    edit:function(data, callback) {
         Person.findOne({
-            _id: id
-        }).exec((err, data) => {
-            data.name = name
-            data.image = image
-            data.dob = dob
-            data.save(callback)
+            _id: data.id
+        }).exec(function(err, result) {
+            result.name = data.name,
+            result.image = data.image,
+            result.dob = data.dob,
+            result.save(callback)
         })
     },
-    delete(id, callback) {
+    delete:function(id, callback) {
         Person.deleteOne({
-            _id: id
+            _id:id
         }).exec(callback)
     }
 }

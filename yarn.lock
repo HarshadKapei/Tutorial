@@ -566,15 +566,6 @@ ajv-keywords@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.2.0.tgz#e86b819c602cf8821ad637413698f1dec021847a"
 
-ajv@^5.5.2:
-  version "5.5.2"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.5.2.tgz#73b5eeca3fab653e3d3f9422b341ad42205dc965"
-  dependencies:
-    co "^4.6.0"
-    fast-deep-equal "^1.0.0"
-    fast-json-stable-stringify "^2.0.0"
-    json-schema-traverse "^0.3.0"
-
 ajv@^6.0.1, ajv@^6.5.3:
   version "6.5.4"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.5.4.tgz#247d5274110db653706b550fcc2b797ca28cfc59"
@@ -736,10 +727,6 @@ cli-cursor@^2.1.0:
 cli-width@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
-
-co@^4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
 
 color-convert@^1.9.0:
   version "1.9.3"
@@ -977,12 +964,6 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
 
-express-json-validator-middleware@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/express-json-validator-middleware/-/express-json-validator-middleware-1.2.3.tgz#3fe505ce62291db95eaf1fe1bd3795667d80c516"
-  dependencies:
-    ajv "^5.5.2"
-
 express@^4.16.3:
   version "4.16.3"
   resolved "http://registry.npmjs.org/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
@@ -1025,10 +1006,6 @@ external-editor@^3.0.0:
     chardet "^0.7.0"
     iconv-lite "^0.4.24"
     tmp "^0.0.33"
-
-fast-deep-equal@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-1.1.0.tgz#c053477817c86b51daa853c81e059b733d023614"
 
 fast-deep-equal@^2.0.1:
   version "2.0.1"
@@ -1280,10 +1257,6 @@ jsesc@~0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
 
-json-schema-traverse@^0.3.0:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/json-schema-traverse/-/json-schema-traverse-0.3.1.tgz#349a6d44c53a51de89b40805c5d5e59b417d3340"
-
 json-schema-traverse@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz#69f6a87d9513ab8bb8fe63bdb0979c448e684660"
@@ -1383,6 +1356,11 @@ mkdirp@^0.5.1:
   resolved "http://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+moment@^2.22.2:
+  version "2.23.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.23.0.tgz#759ea491ac97d54bac5ad776996e2a58cc1bc225"
+  integrity sha512-3IE39bHVqFbWWaPOMHZF98Q9c3LDKGTmypMiTM2QygGXXElkFWIH7GxfmlwmY2vwa+wmNsoYZmG2iusf1ZjJoA==
 
 mongodb-core@3.1.5:
   version "3.1.5"
@@ -1995,15 +1973,17 @@ which@^1.2.9:
   dependencies:
     isexe "^2.0.0"
 
-wohlig-framework-core@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/wohlig-framework-core/-/wohlig-framework-core-0.0.6.tgz#282fce5bb3f1c56ee9fb9bc22a2490ca340e48bd"
+wohlig-framework-core@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/wohlig-framework-core/-/wohlig-framework-core-0.0.8.tgz#b88f8042baf3591f6a9e1ac6cffa0d047c5cb1be"
+  integrity sha512-vCqNaB7YgM1ZhyP4wuTtS5+/O2jJAxC+9OvQ0vq/+yrSDLbMgUTR96neteEkiNi/qWr+jRsmFC3nKPCMa+grUA==
   dependencies:
     body-parser "^1.18.3"
+    cors "^2.8.5"
     ejs "^2.6.1"
     express "^4.16.3"
-    express-json-validator-middleware "^1.2.3"
     lodash "^4.17.10"
+    moment "^2.22.2"
     mongoose "^5.2.17"
     node-cron "^2.0.1"
     require-all "^3.0.0"

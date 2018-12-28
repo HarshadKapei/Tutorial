@@ -1,10 +1,11 @@
+import User from "../mongooseModel/User"
+import { __values } from "tslib"
+
 export default {
     search(callback) {
-        console.log("in search")
         User.find().exec(callback)
     },
     getOne(id, callback) {
-        console.log("abc")
         User.findOne({
             _id: id
         }).exec(callback)
@@ -13,19 +14,43 @@ export default {
         var user = User(data)
         user.save(callback)
     },
-    edit(id, name, email, password, favourites, callback) {
+    edit(data, callback) {
         User.findOne({
-            _id: id
-        }).exec((err, data) => {
-            data.name = name
-            data.email = email
-            data.password = password
-            data.favourites = favourites
-            data.save(callback)
+            _id: data.id
+        }).exec(function(err, result) {
+            result.name = data.name
+            result.email = data.email
+            result.password = data.password
+            result.save(callback)
+        })
+    },
+    addToFavourites(data, callback) {
+        User.findOne({
+            _id: data.user
+        }).exec(function(err, result) {
+            result.favourites.push(data.favourite)
+            result.save(callback)
+        })
+    },
+    removeToFavourites(data, callback) {
+        User.findOne({
+            _id: data.user
+        }).exec(function(err, result) {
+            // for (var i = 0; i < favourites.length - 1; i++) {
+            //     if (result.favourites === data.favourite) {
+            //         result.favourites = delete favourites[i]
+            //     }
+            // }
+
+            _.remove(result.favourites, function(n) {
+                return n == data.favourite
+            })
+            console.log("##################" + result)
+            result.save(callback)
         })
     },
     delete(id, callback) {
-        Genre.deleteOne({
+        User.deleteOne({
             _id: id
         }).exec(callback)
     }

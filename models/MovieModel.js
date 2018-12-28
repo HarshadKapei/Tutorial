@@ -1,26 +1,32 @@
+import Movie from "../mongooseModel/Movie"
+
 export default {
     search(callback) {
-        Genre.find().exec(callback)
+        Movie.find().exec(callback)
     },
     getOne(id, callback) {
-        Genre.findOne({
+        Movie.findOne({
             _id: id
         }).exec(callback)
     },
     create(data, callback) {
-        var genre = Genre(data)
-        genre.save(callback)
+        var movie = Movie(data)
+        movie.save(callback)
     },
     edit(data, callback) {
-        Genre.findOne({
+        Movie.findOne({
             _id: data.id
-        }).exec((err, result) => {
+
+            
+        }).exec(function(err, result) {
             result.name = data.name
+            result.email = data.email
+            result.password = data.password
             result.save(callback)
         })
     },
     delete(id, callback) {
-        Genre.deleteOne({
+        Movie.deleteOne({
             _id: id
         }).exec(callback)
     }

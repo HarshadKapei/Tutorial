@@ -1,4 +1,4 @@
 var schema = new Schema({
-    name: { type: String, required: true }
+    name: { type: String }
 })
 export default mongoose.model("Genre", schema)

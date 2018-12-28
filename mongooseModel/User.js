@@ -1,7 +1,7 @@
 var schema = new Schema({
-    name: { type: String, required: true },
+    name: { type: String },
     email: { type: String, unique: true, validate: validators.isEmail() },
-    password: { type: String, required: true },
+    password: { type: String },
     resetToken: String,
     resetTokenExpiry: { type: Date },
     accessToken: { type: String },

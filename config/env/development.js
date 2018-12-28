@@ -1,5 +1,5 @@
 export default {
-    port: 3000,
+    port: 1337,
     mongodbUrl: "mongodb://localhost:27017/movieDemo?readPreference=primary",
     url: "http://wohlig.io"
 }
