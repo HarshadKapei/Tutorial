@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>From</title>
+</head>
+
+<body>
+    <h1>Registration</h1>
+    <form>
+        <label>FristName:
+            <input type="text" placeholder="Harshad" required>
+        </label>
+        <label>LastName:
+            <input type="text" placeholder="Kapei" required>
+        </label>
+        <br>
+        Male:<input name="Gender" type="radio" value="Male" required>
+        Female:<input name="Gender" type="radio" value="Female" required>
+        Other:<input name="Gender" type="radio" value="Other" required>
+
+        <br>
+        Email:<input type="email" required>
+        Password:<input type="password" required pattern=".{5,10}" required title="Password must be 5 to 10">
+
+        <br>
+        <label> BrithDay:
+            <select name="Month">
+                <option>Month</option>
+            </select>
+
+            <select name="Date">
+                <option>Date</option>
+            </select>
+
+            <select name="Year">
+                <option>Year</option>
+            </select>
+        </label>
+        <br>
+        I am agree to term and condition
+        <input type="checkbox">
+        <br>
+        <input type="Submit">
+    </form>
+</body>
+
+</html>
