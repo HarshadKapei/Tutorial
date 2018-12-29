@@ -3,6 +3,7 @@ var schema = new Schema({
     email: { type: String, unique: true, validate: validators.isEmail() },
     password: { type: String },
     resetToken: String,
+    view: Number,
     resetTokenExpiry: { type: Date },
     accessToken: { type: String },
     favourites: [

@@ -17,7 +17,7 @@ router.put("/addToFavourites", (req, res) => {
     UserModel.addToFavourites(req.body, res.callback)
 })
 router.put("/removeToFavourites", (req, res) => {
-    UserModel.addToFavourites(req.body, res.callback)
+    UserModel.removeToFavourites(req.body, res.callback)
 })
 router.delete("/delete/:id", (req, res) => {
     UserModel.delete(req.params.id, res.callback)

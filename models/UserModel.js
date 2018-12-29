@@ -1,13 +1,19 @@
 import User from "../mongooseModel/User"
-import { __values } from "tslib"
 
 export default {
     search(callback) {
         User.find().exec(callback)
     },
     getOne(id, callback) {
+        User.update({ _id: id }, 
+            { $inc: { view: 1 } } 
+        ).exec(function(err,result){
+            result.User.findUser(callback)
+        })
+    },
+    findUser(id,callback){
         User.findOne({
-            _id: id
+            _id:id
         }).exec(callback)
     },
     create(data, callback) {
@@ -25,29 +31,17 @@ export default {
         })
     },
     addToFavourites(data, callback) {
-        User.findOne({
-            _id: data.user
-        }).exec(function(err, result) {
-            result.favourites.push(data.favourite)
-            result.save(callback)
-        })
+        User.update(
+            { _id: data.user },
+            { $addToSet: { favourites: data.favourite } }
+        ).exec(callback)
     },
     removeToFavourites(data, callback) {
-        User.findOne({
-            _id: data.user
-        }).exec(function(err, result) {
-            // for (var i = 0; i < favourites.length - 1; i++) {
-            //     if (result.favourites === data.favourite) {
-            //         result.favourites = delete favourites[i]
-            //     }
-            // }
-
-            _.remove(result.favourites, function(n) {
-                return n == data.favourite
-            })
-            console.log("##################" + result)
-            result.save(callback)
-        })
+        User.update(
+            { _id: data.user },
+            { $pull: { favourites: data.favourite } }
+            // { multi: true }
+        ).exec(callback)
     },
     delete(id, callback) {
         User.deleteOne({
