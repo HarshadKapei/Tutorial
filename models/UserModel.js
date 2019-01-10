@@ -5,15 +5,16 @@ export default {
         User.find().exec(callback)
     },
     getOne(id, callback) {
-        User.update({ _id: id }, 
-            { $inc: { view: 1 } } 
-        ).exec(function(err,result){
+        User.update({ _id: id }, { $inc: { view: 1 } }).exec(function(
+            err,
+            result
+        ) {
             result.User.findUser(callback)
         })
     },
-    findUser(id,callback){
+    findUser(id, callback) {
         User.findOne({
-            _id:id
+            _id: id
         }).exec(callback)
     },
     create(data, callback) {

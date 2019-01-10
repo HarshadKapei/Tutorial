@@ -6,7 +6,7 @@ router.get("/search", (req, res) => {
 })
 router.get("/:id", (req, res) => {
     UserModel.getOne(req.params.id, res.callback)
-})
+})  ``
 router.post("/create", (req, res) => {
     UserModel.create(req.body, res.callback)
 })

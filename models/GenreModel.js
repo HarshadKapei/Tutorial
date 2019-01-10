@@ -1,5 +1,5 @@
 export default {
-    search(callback) {
+    search:function(callback) {
         Genre.find().exec(callback)
     },
     getOne(id, callback) {
